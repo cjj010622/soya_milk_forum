@@ -4,26 +4,20 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd3cc12c-832c-4bd1-b156-7c8fb48bd4ab" name="变更" comment="feat；本地项目文件">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/usercenter/cmd/api/desc/user/user.api" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/usercenter/cmd/api/desc/usercenter.api" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/usercenter/model/c_user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/core/reflect.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/ctx_data/ctx_data.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/errs/err_code.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/errs/err_msg.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/errs/erros.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/mongo_base/aggregate_base.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/mongo_base/bean_base.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/mongo_base/mongo.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/mongo_base/struct_bson.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/response/http_response.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/response/response_bean.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/stores/redis.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+    <list default="true" id="bd3cc12c-832c-4bd1-b156-7c8fb48bd4ab" name="变更" comment="feat；本地项目文件初始化">
+      <change afterPath="$PROJECT_DIR$/app/usercenter/cmd/api/desc/user/etc/usercenter.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/usercenter/cmd/api/desc/user/internal/config/config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/usercenter/cmd/api/desc/user/internal/handler/routes.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/usercenter/cmd/api/desc/user/internal/handler/user/detailhandler.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/usercenter/cmd/api/desc/user/internal/handler/user/loginhandler.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/usercenter/cmd/api/desc/user/internal/handler/user/registerhandler.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/usercenter/cmd/api/desc/user/internal/logic/user/detaillogic.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/usercenter/cmd/api/desc/user/internal/logic/user/loginlogic.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/usercenter/cmd/api/desc/user/internal/logic/user/registerlogic.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/usercenter/cmd/api/desc/user/internal/svc/servicecontext.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/usercenter/cmd/api/desc/user/internal/types/types.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/usercenter/cmd/api/desc/user/usercenter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/usercenter/cmd/api/desc/usercenter.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/usercenter.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -93,7 +87,8 @@
       <path value="$PROJECT_DIR$/soya_milk_forum" />
     </ignored-roots>
     <MESSAGE value="feat；本地项目文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat；本地项目文件" />
+    <MESSAGE value="feat；本地项目文件初始化" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat；本地项目文件初始化" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
