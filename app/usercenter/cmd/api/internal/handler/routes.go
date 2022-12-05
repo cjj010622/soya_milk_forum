@@ -4,8 +4,8 @@ package handler
 import (
 	"net/http"
 
-	user "soya_milk_forum/app/usercenter/cmd/api/desc/user/internal/handler/user"
-	"soya_milk_forum/app/usercenter/cmd/api/desc/user/internal/svc"
+	user "soya_milk_forum/app/usercenter/cmd/api/internal/handler/user"
+	"soya_milk_forum/app/usercenter/cmd/api/internal/svc"
 
 	"github.com/zeromicro/go-zero/rest"
 )

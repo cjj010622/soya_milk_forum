@@ -4,9 +4,9 @@ import (
 	"flag"
 	"fmt"
 
-	"soya_milk_forum/app/usercenter/cmd/api/desc/user/internal/config"
-	"soya_milk_forum/app/usercenter/cmd/api/desc/user/internal/handler"
-	"soya_milk_forum/app/usercenter/cmd/api/desc/user/internal/svc"
+	"soya_milk_forum/app/usercenter/cmd/api/internal/config"
+	"soya_milk_forum/app/usercenter/cmd/api/internal/handler"
+	"soya_milk_forum/app/usercenter/cmd/api/internal/svc"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/rest"

@@ -4,9 +4,9 @@ import (
 	"net/http"
 
 	"github.com/zeromicro/go-zero/rest/httpx"
-	"soya_milk_forum/app/usercenter/cmd/api/desc/user/internal/logic/user"
-	"soya_milk_forum/app/usercenter/cmd/api/desc/user/internal/svc"
-	"soya_milk_forum/app/usercenter/cmd/api/desc/user/internal/types"
+	"soya_milk_forum/app/usercenter/cmd/api/internal/logic/user"
+	"soya_milk_forum/app/usercenter/cmd/api/internal/svc"
+	"soya_milk_forum/app/usercenter/cmd/api/internal/types"
 )
 
 func DetailHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {

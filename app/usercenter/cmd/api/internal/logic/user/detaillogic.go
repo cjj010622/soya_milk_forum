@@ -3,8 +3,8 @@ package user
 import (
 	"context"
 
-	"soya_milk_forum/app/usercenter/cmd/api/desc/user/internal/svc"
-	"soya_milk_forum/app/usercenter/cmd/api/desc/user/internal/types"
+	"soya_milk_forum/app/usercenter/cmd/api/internal/svc"
+	"soya_milk_forum/app/usercenter/cmd/api/internal/types"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
