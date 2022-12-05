@@ -1,0 +1,29 @@
+import (
+	"user/user.api"
+)
+
+@server(
+	prefix: usercenter/v1
+	group: user
+)
+
+service usercenter {
+	@doc "注册"
+	@handler register
+	post /user/register (RegisterReq) returns (RegisterResp)
+	
+	@doc "登录"
+	@handler login
+	post /user/login (LoginReq) returns (LoginResp)
+}
+
+@server(
+	prefix: usercenter/v1
+	group: user
+	jwt: JwtAuth
+)
+service usercenter {
+	@doc "获取用户信息"
+	@handler detail
+	post /user/detail (UserInfoReq) returns (UserInfoResp)
+}

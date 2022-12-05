@@ -4,10 +4,28 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd3cc12c-832c-4bd1-b156-7c8fb48bd4ab" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/soya_milk_forum.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="bd3cc12c-832c-4bd1-b156-7c8fb48bd4ab" name="变更" comment="feat；本地项目文件">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/usercenter/cmd/api/desc/user/user.api" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/usercenter/cmd/api/desc/usercenter.api" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/usercenter/model/c_user.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/core/reflect.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/ctx_data/ctx_data.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/errs/err_code.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/errs/err_msg.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/errs/erros.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/mongo_base/aggregate_base.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/mongo_base/bean_base.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/mongo_base/mongo.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/mongo_base/struct_bson.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/response/http_response.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/response/response_bean.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/stores/redis.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usercenter.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +34,10 @@
   </component>
   <component name="GOROOT" url="file://D:/go" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/soya_milk_forum" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2IOHRL10H8sHJMG5S3MrxYO0jks" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -38,9 +59,19 @@
     "WebServerToolWindowFactoryState": "false",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "C:/Users/热爱/workspace/soya_milk_forum"
+    "last_opened_file_path": "C:/Users/热爱/workspace/soya_milk_forum",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\热爱\workspace\soya_milk_forum" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
@@ -58,6 +89,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/soya_milk_forum" />
+    </ignored-roots>
+    <MESSAGE value="feat；本地项目文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat；本地项目文件" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

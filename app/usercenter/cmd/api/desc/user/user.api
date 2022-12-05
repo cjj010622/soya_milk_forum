@@ -1,0 +1,49 @@
+syntax = "v1"
+
+info(
+    title: "用户实例"
+    desc: "用户实例"
+    author: "JackChen"
+    email: "1612103803@qq.com"
+)
+
+type User {
+    Id string `json:"id"`
+    TelephoneNumber string `json:"telephone_number"`
+    Email string `json:"email"`
+    Password string `json:"password"`
+    Status int8 `json:"status"`
+    Avatar string `json:"avatar"`
+    Data map[string]interface{} `json:"data"`
+}
+
+type (
+    RegisterReq {
+        TelephoneNumber string `json:"telephone_number"`
+        Password string `json:"password"`
+    }
+
+    RegisterResp {
+        AccessToken string `json:"accessToken"`
+    }
+)
+
+type (
+    LoginReq {
+        TelephoneNumber string `json:"telephone_number"`
+        Password string `json:"password"`
+    }
+
+    LoginResp {
+        AccessToken string `json:"accessToken"`
+    }
+)
+
+type (
+    UserInfoReq {
+    }
+
+    UserInfoResp {
+        UserInfo User `json:"userInfo"`
+    }
+)
