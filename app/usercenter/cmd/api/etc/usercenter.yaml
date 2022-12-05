@@ -1,3 +1,17 @@
-Name: usercenter
+Name: usercenter-api
 Host: 0.0.0.0
-Port: 8888
+Port: 8880
+
+#jwtAuth
+JwtAuth:
+  AccessSecret: healthy-forum-jwt-key
+
+Log:
+  ServiceName: usercenter-api
+  Level: error
+
+#rpc service
+UsercenterRpcConf:
+  Endpoints:
+    - 127.0.0.1:9990
+  NonBlock: true
