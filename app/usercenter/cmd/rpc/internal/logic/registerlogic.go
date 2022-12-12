@@ -24,7 +24,6 @@ func NewRegisterLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Register
 }
 
 func (l *RegisterLogic) Register(in *pb.RegisterReq) (*pb.RegisterResp, error) {
-	// todo: add your logic here and delete this line
 
 	return &pb.RegisterResp{}, nil
 }

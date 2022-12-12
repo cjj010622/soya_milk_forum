@@ -17,7 +17,7 @@ message User {
 
 //req 、resp
 message RegisterReq {
-  string mobile = 1;
+  string telephone_number = 1;
   string username = 2;
   string password = 3;
 }
