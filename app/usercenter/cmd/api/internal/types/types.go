@@ -2,13 +2,13 @@
 package types
 
 type User struct {
-	Id              string                 `json:"id"`
-	TelephoneNumber string                 `json:"telephone_number"`
-	Email           string                 `json:"email"`
-	Password        string                 `json:"password"`
-	Status          int8                   `json:"status"`
-	Avatar          string                 `json:"avatar"`
-	Data            map[string]interface{} `json:"data"`
+	Id              string `json:"id"`
+	TelephoneNumber string `json:"telephone_number"`
+	Email           string `json:"email"`
+	Password        string `json:"password"`
+	Status          int8   `json:"status"`
+	Avatar          string `json:"avatar"`
+	Data            string `json:"data"`
 }
 
 type RegisterReq struct {
