@@ -2,9 +2,10 @@ package logic
 
 import (
 	"context"
-	"github.com/pkg/errors"
+	"fmt"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
+	"soya_milk_forum/app/usercenter/cmd/rpc/usercenter"
 	"soya_milk_forum/app/usercenter/model"
 	"soya_milk_forum/common/errs"
 	tool "soya_milk_forum/common/tools"
@@ -21,8 +22,6 @@ type RegisterLogic struct {
 	logx.Logger
 }
 
-var ErrUserAlreadyRegisterError = errs.NewErrMsg("user has been registered")
-
 func NewRegisterLogic(ctx context.Context, svcCtx *svc.ServiceContext) *RegisterLogic {
 	return &RegisterLogic{
 		ctx:    ctx,
@@ -34,13 +33,13 @@ func NewRegisterLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Register
 func (l *RegisterLogic) Register(in *pb.RegisterReq) (*pb.RegisterResp, error) {
 	user, err := l.svcCtx.UserModel.FindOne(l.ctx, bson.D{{"telephone_number", in.TelephoneNumber}})
 	if err != nil && err != mongo.ErrNoDocuments {
-		return nil, errors.Wrapf(errs.NewErrCode(errs.DB_ERROR), "telephone_number:%s,err:%v",
-			in.TelephoneNumber, err)
+		logx.Error(err, fmt.Sprintf("telephone_number:%s,err:%v", in.TelephoneNumber, err))
+		return nil, errs.NewErrCode(errs.DB_ERROR)
 	}
 
 	if user != nil {
-		return nil, errors.Wrapf(ErrUserAlreadyRegisterError, "Register user exists mobile:%s,err:%v",
-			in.TelephoneNumber, err)
+		logx.Error(fmt.Sprintf("Register user exists mobile:%s,err:%v", in.TelephoneNumber, err))
+		return nil, errs.NewErrCode(errs.TELEPHONE_ALREADY_REGIST)
 	}
 
 	user = &model.User{TelephoneNumber: in.TelephoneNumber, Password: in.Password}
@@ -53,8 +52,20 @@ func (l *RegisterLogic) Register(in *pb.RegisterReq) (*pb.RegisterResp, error) {
 
 	_, err = l.svcCtx.UserModel.Add(l.ctx, user)
 	if err != nil {
-		return nil, errors.Wrapf(errs.NewErrCode(errs.DB_ERROR), "telephone_number:%s,err:%v", in.TelephoneNumber, err)
+		logx.Error(err, "telephone_number:%s,err:%v", in.TelephoneNumber, err)
+		return nil, errs.NewErrCode(errs.DB_ERROR)
 	}
 
-	return &pb.RegisterResp{}, nil
+	generateTokenLogic := NewGenerateTokenLogic(l.ctx, l.svcCtx)
+	tokenResp, err := generateTokenLogic.GenerateToken(&usercenter.GenerateTokenReq{
+		UserId: 1,
+	})
+
+	if err != nil {
+		return nil, err
+	}
+
+	return &usercenter.RegisterResp{
+		AccessToken: tokenResp.AccessToken,
+	}, nil
 }

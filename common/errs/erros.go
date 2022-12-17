@@ -2,6 +2,10 @@ package errs
 
 import (
 	"fmt"
+	"github.com/pkg/errors"
+	"google.golang.org/grpc/status"
+	"strconv"
+	"strings"
 )
 
 /**
@@ -36,4 +40,19 @@ func NewErrCode(errCode uint32) *CodeError {
 
 func NewErrMsg(errMsg string) *CodeError {
 	return &CodeError{errCode: SERVER_COMMON_ERROR, errMsg: errMsg}
+}
+
+func FormatRpcErr(err error) *CodeError {
+	causeErr := errors.Cause(err)
+	if gstatus, ok := status.FromError(causeErr); ok { // grpc err错误
+		cm := gstatus.Message()
+		codeMsg := strings.Split(cm, "，")
+		for _, v := range codeMsg {
+			codeMsg = append(codeMsg, strings.Split(v, ":")...)
+		}
+		code, _ := strconv.ParseUint(codeMsg[3], 10, 32)
+		return NewErrCodeMsg(uint32(code), codeMsg[5])
+	}
+
+	return nil
 }
