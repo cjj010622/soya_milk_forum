@@ -22,6 +22,11 @@ type (
 
 	UserModel interface {
 		base_model.Interface
+		Add(ctx context.Context, user *User) (id string, err error)
+		Update(ctx context.Context, user User) (err error)
+		FindOne(ctx context.Context, filter bson.D) (user *User, err error)
+		List(ctx context.Context, domain base_model.PageDomain, projections []string,
+			filter bson.D) (userList []User, total int64, err error)
 	}
 
 	UserModelImpl struct {
@@ -29,6 +34,12 @@ type (
 		tableName string
 	}
 )
+
+func NewUserModel(db *mongo.Database) *UserModelImpl {
+	return &UserModelImpl{
+		db:        db,
+		tableName: "d_user"}
+}
 
 func (u *UserModelImpl) TableName() string {
 	return u.tableName
@@ -42,7 +53,7 @@ func (u *UserModelImpl) DelMany(ctx context.Context, ids []primitive.ObjectID, d
 	return base_model.DefaultDelMany(ctx, u.Collection(), "_id", ids, deletedBy)
 }
 
-func (u *UserModelImpl) Add(ctx context.Context, user User) (id string, err error) {
+func (u *UserModelImpl) Add(ctx context.Context, user *User) (id string, err error) {
 	co := u.Collection()
 	//初始化时间
 	base_model.InitTime(user)
@@ -61,9 +72,9 @@ func (u *UserModelImpl) Update(ctx context.Context, user User) (err error) {
 	return
 }
 
-func (u *UserModelImpl) FindOne(ctx context.Context, id primitive.ObjectID, projections []string) (user *User, err error) {
-	err = base_model.QueryOne(ctx, u.Collection(), projections, base_model.DefaultFilter(bson.D{{"_id",
-		id}}), &user)
+func (u *UserModelImpl) FindOne(ctx context.Context, filter bson.D) (user *User, err error) {
+	err = base_model.QueryOne(ctx, u.Collection(), []string{"account", "password", "telephone_number", "avatar"}, filter,
+		&user)
 
 	if err != nil {
 		return nil, err
